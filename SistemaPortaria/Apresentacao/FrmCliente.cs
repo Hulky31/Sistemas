@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Apresentacao
 {
-    public partial class Form1 : Form
+    public partial class FrmClienteCadastrar : Form
     {
-        public Form1()
+        public FrmClienteCadastrar()
         {
             InitializeComponent();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

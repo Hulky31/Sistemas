@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ObjetoTransferencia
 {
-    internal class ClienteColecao
+    public class ClienteColecao: List<Cliente>
     {
+
     }
 }

@@ -26,7 +26,11 @@ namespace Apresentacao
         {
             FrmClienteCadastrar frmClienteCadastrar = new FrmClienteCadastrar();
 
+            frmClienteCadastrar.MdiParent = this;
+
             frmClienteCadastrar.Show();
         }
+
+      
     }
 }

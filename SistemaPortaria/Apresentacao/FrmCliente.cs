@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Negocios;
+using ObjetoTransferencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,5 +23,18 @@ namespace Apresentacao
         {
             Close();
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            ClienteNegocio clienteNegocio = new ClienteNegocio();
+            ClienteColecao clientes = new ClienteColecao();
+        
+            clientes = clienteNegocio.ConsultarPorNome(textBox1.Text.ToString());
+
+          
+            dgwPrincipal.DataSource = clientes;
+        }
+
+      
     }
 }

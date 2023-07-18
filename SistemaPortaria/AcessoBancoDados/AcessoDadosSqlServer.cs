@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AcessoBancoDados
 {
-    internal class AcessoDadosSqlServer
+    public class AcessoDadosSqlServer
     {
         public SqlConnection CriarConexao()
         {
@@ -58,17 +58,17 @@ namespace AcessoBancoDados
             sqlCommand.CommandText = nomeStoredProcedureOutextoSql;
             sqlCommand.CommandTimeout = 7200;
 
+            
+
             foreach (SqlParameter sqlParameter in sqlParameterCollection)
             {
                 sqlCommand.Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
             }
 
-            sqlCommand.ExecuteScalar();
 
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             DataTable dataTable = new DataTable();
             sqlDataAdapter.Fill(dataTable);
-
 
             return dataTable;
         }

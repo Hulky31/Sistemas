@@ -36,8 +36,8 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgwPrincipal = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPesquisar
@@ -48,6 +48,7 @@
             this.btnPesquisar.TabIndex = 0;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnAlterar
             // 
@@ -111,20 +112,20 @@
             this.textBox1.Size = new System.Drawing.Size(625, 20);
             this.textBox1.TabIndex = 7;
             // 
-            // dataGridView1
+            // dgwPrincipal
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(795, 383);
-            this.dataGridView1.TabIndex = 8;
+            this.dgwPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwPrincipal.Location = new System.Drawing.Point(2, 36);
+            this.dgwPrincipal.Name = "dgwPrincipal";
+            this.dgwPrincipal.Size = new System.Drawing.Size(795, 383);
+            this.dgwPrincipal.TabIndex = 8;
             // 
             // FrmClienteCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgwPrincipal);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnFechar);
@@ -139,7 +140,7 @@
             this.Name = "FrmClienteCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmClienteCadastrar";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +156,6 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgwPrincipal;
     }
 }

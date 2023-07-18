@@ -64,7 +64,7 @@
             // menu_Cliente
             // 
             this.menu_Cliente.Name = "menu_Cliente";
-            this.menu_Cliente.Size = new System.Drawing.Size(180, 22);
+            this.menu_Cliente.Size = new System.Drawing.Size(111, 22);
             this.menu_Cliente.Text = "Cliente";
             this.menu_Cliente.Click += new System.EventHandler(this.menu_Cliente_Click);
             // 
@@ -74,6 +74,21 @@
             this.menu_Sair.Size = new System.Drawing.Size(38, 20);
             this.menu_Sair.Text = "&Sair";
             this.menu_Sair.Click += new System.EventHandler(this.menu_Sair_Click);
+            // 
+            // menuCadastrar
+            // 
+            this.menuCadastrar.Name = "menuCadastrar";
+            this.menuCadastrar.Size = new System.Drawing.Size(32, 19);
+            // 
+            // menuCliente
+            // 
+            this.menuCliente.Name = "menuCliente";
+            this.menuCliente.Size = new System.Drawing.Size(32, 19);
+            // 
+            // menuSair
+            // 
+            this.menuSair.Name = "menuSair";
+            this.menuSair.Size = new System.Drawing.Size(32, 19);
             // 
             // statusStrip1
             // 
@@ -109,6 +124,7 @@
             this.Name = "FrmMenuPrincipal";
             this.Text = "FrmMenuPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+      
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

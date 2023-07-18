@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
@@ -37,6 +45,11 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgwPrincipal = new System.Windows.Forms.DataGridView();
+            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgwPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +89,7 @@
             this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnConsultar
             // 
@@ -114,11 +128,87 @@
             // 
             // dgwPrincipal
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgwPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgwPrincipal.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgwPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwPrincipal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCliente,
+            this._Nome,
+            this._Numero,
+            this._CPF,
+            this._DataNascimento});
             this.dgwPrincipal.Location = new System.Drawing.Point(2, 36);
+            this.dgwPrincipal.MultiSelect = false;
             this.dgwPrincipal.Name = "dgwPrincipal";
+            this.dgwPrincipal.ReadOnly = true;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.dgwPrincipal.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgwPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwPrincipal.Size = new System.Drawing.Size(795, 383);
             this.dgwPrincipal.TabIndex = 8;
+            // 
+            // IdCliente
+            // 
+            this.IdCliente.DataPropertyName = "IdCliente";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.Format = "#,##0";
+            this.IdCliente.DefaultCellStyle = dataGridViewCellStyle3;
+            this.IdCliente.FillWeight = 50F;
+            this.IdCliente.HeaderText = "IdCliente";
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.ReadOnly = true;
+            this.IdCliente.Width = 80;
+            // 
+            // _Nome
+            // 
+            this._Nome.DataPropertyName = "Nome";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this._Nome.DefaultCellStyle = dataGridViewCellStyle4;
+            this._Nome.HeaderText = "Nome";
+            this._Nome.Name = "_Nome";
+            this._Nome.ReadOnly = true;
+            this._Nome.Width = 200;
+            // 
+            // _Numero
+            // 
+            this._Numero.DataPropertyName = "Numero";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this._Numero.DefaultCellStyle = dataGridViewCellStyle5;
+            this._Numero.HeaderText = "Numero";
+            this._Numero.Name = "_Numero";
+            this._Numero.ReadOnly = true;
+            this._Numero.Width = 150;
+            // 
+            // _CPF
+            // 
+            this._CPF.DataPropertyName = "CPF";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this._CPF.DefaultCellStyle = dataGridViewCellStyle6;
+            this._CPF.HeaderText = "CPF";
+            this._CPF.Name = "_CPF";
+            this._CPF.ReadOnly = true;
+            this._CPF.Width = 150;
+            // 
+            // _DataNascimento
+            // 
+            this._DataNascimento.DataPropertyName = "DataNascimento";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this._DataNascimento.DefaultCellStyle = dataGridViewCellStyle7;
+            this._DataNascimento.HeaderText = "DataNascimento";
+            this._DataNascimento.Name = "_DataNascimento";
+            this._DataNascimento.ReadOnly = true;
+            this._DataNascimento.Width = 130;
             // 
             // FrmClienteCadastrar
             // 
@@ -157,5 +247,10 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dgwPrincipal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _DataNascimento;
     }
 }

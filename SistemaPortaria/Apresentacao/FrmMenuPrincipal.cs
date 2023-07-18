@@ -17,18 +17,16 @@ namespace Apresentacao
             InitializeComponent();
         }
 
-        private void menuCliente_Click(object sender, EventArgs e)
+        private void menu_Sair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void menu_Cliente_Click(object sender, EventArgs e)
         {
             FrmClienteCadastrar frmClienteCadastrar = new FrmClienteCadastrar();
 
-            frmClienteCadastrar.Parent = this;
-
             frmClienteCadastrar.Show();
-        }
-
-        private void menuSair_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

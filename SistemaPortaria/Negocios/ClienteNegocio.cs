@@ -19,7 +19,7 @@ namespace Negocios
             AcessoDadosSqlserver.AdicionaParametros("@Nome", cliente.Nome);
             AcessoDadosSqlserver.AdicionaParametros("@Numero", cliente.Numero);
             AcessoDadosSqlserver.AdicionaParametros("@CPF", cliente.CPF);
-            AcessoDadosSqlserver.AdicionaParametros("@Datanascimento", cliente.DataNascimento);
+            AcessoDadosSqlserver.AdicionaParametros("@DataNascimento", cliente.DataNascimento);
             string IdCliente = AcessoDadosSqlserver.ExecutarManipulacao(CommandType.StoredProcedure, "uspClienteInserir").ToString();
 
             return IdCliente; 
@@ -86,7 +86,7 @@ namespace Negocios
                 cliente.Nome = Convert.ToString(dataRow["Nome"]);
                 cliente.Numero = Convert.ToDecimal(dataRow["Numero"]);
                 cliente.CPF = Convert.ToString(dataRow["CPF"]);
-                cliente.DataNascimento = Convert.ToDateTime(dataRow["Datanascimento"]);
+                cliente.DataNascimento = Convert.ToDateTime(dataRow["DataNascimento"]);
 
                 
                 clienteColecao.Add(cliente);

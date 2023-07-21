@@ -76,5 +76,49 @@ namespace Apresentacao
             }
 
         }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            FrmCadastroCliente frmCadastroCliente = new FrmCadastroCliente(AcaoNaTela.Inserir, null);
+
+            frmCadastroCliente.ShowDialog();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+            if (dgwPrincipal.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum cliente Selecionado");
+
+                return;
+            }
+          
+            Cliente clienteSelcionado = (dgwPrincipal.SelectedRows[0].DataBoundItem as Cliente);
+
+            FrmCadastroCliente frmCadastroCliente = new FrmCadastroCliente(AcaoNaTela.Alterar,clienteSelcionado);
+
+            frmCadastroCliente.ShowDialog();
+
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+            if (dgwPrincipal.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum cliente Selecionado");
+
+                return;
+            }
+          
+            Cliente clienteSelcionado = (dgwPrincipal.SelectedRows[0].DataBoundItem as Cliente);
+
+            FrmCadastroCliente frmCadastroCliente = new FrmCadastroCliente(AcaoNaTela.Consultar, clienteSelcionado);
+
+            frmCadastroCliente.ShowDialog();
+
+        }
     }
 }

@@ -57,7 +57,7 @@
             this.lblNome.Location = new System.Drawing.Point(12, 60);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 1;
+            this.lblNome.TabIndex = 2;
             this.lblNome.Text = "Nome";
             // 
             // lblNumero
@@ -66,7 +66,7 @@
             this.lblNumero.Location = new System.Drawing.Point(12, 111);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
-            this.lblNumero.TabIndex = 2;
+            this.lblNumero.TabIndex = 4;
             this.lblNumero.Text = "Numero";
             // 
             // lblCpf
@@ -75,7 +75,7 @@
             this.lblCpf.Location = new System.Drawing.Point(12, 162);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(27, 13);
-            this.lblCpf.TabIndex = 3;
+            this.lblCpf.TabIndex = 6;
             this.lblCpf.Text = "CPF";
             // 
             // lblDataNascimento
@@ -84,7 +84,7 @@
             this.lblDataNascimento.Location = new System.Drawing.Point(12, 213);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(63, 13);
-            this.lblDataNascimento.TabIndex = 4;
+            this.lblDataNascimento.TabIndex = 8;
             this.lblDataNascimento.Text = "Nascimento";
             // 
             // textBoxCodigo
@@ -93,7 +93,7 @@
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.ReadOnly = true;
             this.textBoxCodigo.Size = new System.Drawing.Size(55, 20);
-            this.textBoxCodigo.TabIndex = 6;
+            this.textBoxCodigo.TabIndex = 1;
             this.textBoxCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxNome
@@ -101,14 +101,14 @@
             this.textBoxNome.Location = new System.Drawing.Point(12, 75);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(315, 20);
-            this.textBoxNome.TabIndex = 7;
+            this.textBoxNome.TabIndex = 3;
             // 
             // textBoxNumero
             // 
             this.textBoxNumero.Location = new System.Drawing.Point(12, 124);
             this.textBoxNumero.Name = "textBoxNumero";
             this.textBoxNumero.Size = new System.Drawing.Size(134, 20);
-            this.textBoxNumero.TabIndex = 8;
+            this.textBoxNumero.TabIndex = 5;
             // 
             // dateDataNascimento
             // 
@@ -145,7 +145,7 @@
             this.textBoxCpf.Location = new System.Drawing.Point(12, 178);
             this.textBoxCpf.Name = "textBoxCpf";
             this.textBoxCpf.Size = new System.Drawing.Size(109, 20);
-            this.textBoxCpf.TabIndex = 12;
+            this.textBoxCpf.TabIndex = 7;
             // 
             // FrmCadastroCliente
             // 
@@ -169,7 +169,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmCadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastrar Cliente";
+            this.Text = "Cadastro Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,9 +14,12 @@ namespace Apresentacao
 {
     public partial class FrmCadastroCliente : Form
     {
+        AcaoNaTela AcaoNaTelaSelecionada;
         public FrmCadastroCliente(AcaoNaTela acaoNaTela, Cliente cliente)
         {
             InitializeComponent();
+
+            AcaoNaTelaSelecionada = acaoNaTela;
 
             if (acaoNaTela.Equals(AcaoNaTela.Inserir))
             {
@@ -24,7 +27,7 @@ namespace Apresentacao
                 textBoxNome.Text = cliente.Nome;
                 textBoxNumero.Text = cliente.Numero.ToString();
                 textBoxCpf.Text = cliente.CPF;
-                dateDataNascimento.Value = cliente.DataNascimento;
+                dateDataNascimento.MinDate = cliente.DataNascimento;
                
             }
             else if (acaoNaTela.Equals(AcaoNaTela.Alterar))
@@ -44,6 +47,18 @@ namespace Apresentacao
                 textBoxNumero.Text = cliente.Numero.ToString();
                 textBoxCpf.Text = cliente.CPF;
                 dateDataNascimento.Value = cliente.DataNascimento;
+
+                textBoxCodigo.TabStop = false;
+                textBoxNome.ReadOnly = true;
+                textBoxNome.TabStop = false; 
+                textBoxNumero.ReadOnly = true;
+                textBoxNumero.TabStop = false;
+                textBoxCpf.ReadOnly = true;
+                textBoxCpf.TabStop = false;
+                dateDataNascimento.Enabled = false;
+                btnSalvar.Visible = false;
+                btnCancelar.Text = "Fechar";
+                btnCancelar.Focus();
             }
         }
 
@@ -54,8 +69,63 @@ namespace Apresentacao
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            ClienteNegocio clienteNegocio = new ClienteNegocio();
-            
+            if (AcaoNaTelaSelecionada == AcaoNaTela.Inserir)
+            {
+                Cliente cliente = new Cliente();
+                cliente.Nome = textBoxNome.Text;
+                cliente.Numero = Convert.ToDecimal(textBoxNumero.Text);
+                cliente.CPF = textBoxCpf.Text;
+                cliente.DataNascimento = dateDataNascimento.Value;
+                ClienteNegocio clienteNegocio = new ClienteNegocio();
+                string retorno = clienteNegocio.Inserir(cliente);
+
+                try
+                {
+                    int IdCliente = Convert.ToInt32(retorno);
+
+                    MessageBox.Show("Cliente Inserido com sucesso. Código:" + " " + IdCliente.ToString());
+                    
+                    this.DialogResult = DialogResult.Yes;
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Não foi possível inserir. Detalhes:" + retorno, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    this.DialogResult = DialogResult.No;
+
+                }
+            }
+            else if (AcaoNaTelaSelecionada == AcaoNaTela.Alterar)
+            {
+                Cliente cliente = new Cliente();
+                cliente.IdCliente = Convert.ToInt32(textBoxCodigo.Text);
+                cliente.Nome = textBoxNome.Text;
+                cliente.Numero = Convert.ToDecimal(textBoxNumero.Text);
+                cliente.CPF = textBoxCpf.Text;
+                cliente.DataNascimento = dateDataNascimento.Value;
+                ClienteNegocio clienteNegocio = new ClienteNegocio();
+                string retorno = clienteNegocio.Alterar(cliente);
+                
+                try
+                {
+                    int IdCliente = Convert.ToInt32(retorno);
+
+                    MessageBox.Show("Cliente Alterado com sucesso. Código:" + " " + IdCliente.ToString());
+
+                    this.DialogResult = DialogResult.Yes;
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Não foi possível inserir. Detalhes:" + retorno, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    this.DialogResult = DialogResult.No;
+
+                }
+
+
+            }
         }
     }
 }

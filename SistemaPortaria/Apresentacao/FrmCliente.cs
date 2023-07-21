@@ -79,9 +79,15 @@ namespace Apresentacao
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            FrmCadastroCliente frmCadastroCliente = new FrmCadastroCliente(AcaoNaTela.Inserir, null);
+            Cliente cliente = new Cliente();
 
-            frmCadastroCliente.ShowDialog();
+            FrmCadastroCliente frmCadastroCliente = new FrmCadastroCliente(AcaoNaTela.Inserir, cliente);
+            DialogResult dialogResult = frmCadastroCliente.ShowDialog();
+            
+            if (dialogResult == DialogResult.Yes )
+            {
+                AtualizarGrid();
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -98,7 +104,12 @@ namespace Apresentacao
 
             FrmCadastroCliente frmCadastroCliente = new FrmCadastroCliente(AcaoNaTela.Alterar,clienteSelcionado);
 
-            frmCadastroCliente.ShowDialog();
+            DialogResult dialogResult = frmCadastroCliente.ShowDialog();
+
+            if (dialogResult== DialogResult.Yes)
+            {
+                AtualizarGrid();
+            }
 
 
         }

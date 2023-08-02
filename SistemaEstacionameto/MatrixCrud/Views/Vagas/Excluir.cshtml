@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model EstacionamentoModel
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<div class="container bg-dark p-5 rounded-5">
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Excluir Veiculos</h1>
+    </div>
+
+
+    <form method="post" asp-controller="Vagas" asp-action="Excluir">
+        <input type="hidden" asp-for="Id" />
+
+        <h2 class="text-light">Tem certeza que deseja Excluir?</h2>
+
+        <div class="mb-3">
+            <label for="Proprietario:" class="form-label text-light">Proprietario</label>
+            <input type="text" class="form-control" asp-for="Proprietario" id="Proprietario" placeholder="Proprietario" disabled>
+            <span class="text-danger" asp-validation-for="Proprietario"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Automovel:" class="form-label text-light">Automovel</label>
+            <input type="text" class="form-control" asp-for="Modelo" id="Automovel" placeholder="Modelo do carro" disabled>
+            <span class="text-danger" asp-validation-for="Modelo"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Placa:" class="form-label text-light">Placa</label>
+            <input type="text" class="form-control" asp-for="placa" id="Placa" placeholder="Placa" disabled>
+            <span class="text-danger" asp-validation-for="placa"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Horas:" class="form-label text-light">Horas</label>
+            <input type="text" class="form-control" asp-for="ValolHora" id="Horas" placeholder="Horas"disabled>
+            <span class="text-danger" asp-validation-for="ValolHora"></span>
+        </div>
+
+        <div class="d-flex gap-5 mt-5">
+
+            <button type="submit" class="btn btn-danger w-50">Excluir</button>
+            <a class="btn btn-primary w-50" asp-controller="Vagas" asp-action="Index">Voltar</a>
+
+        </div>
+
+
+    </form>
+
+</div>
